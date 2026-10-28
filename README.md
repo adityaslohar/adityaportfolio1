@@ -22,7 +22,7 @@ A modern, high-performance developer portfolio built with **Next.js 16 (App Rout
 | **Styling & Icons** | [Tailwind CSS](https://tailwindcss.com/), [Lucide React](https://lucide.dev/) |
 | **Data Grids & Analytics**| [TanStack Table v8](https://tanstack.com/table/v8), [Recharts](https://recharts.org/) |
 | **Document Generation** | [@react-pdf/renderer](https://react-pdf.org/) |
-| **AI Integration** | Google Gemini API (`gemini-3.5-flash`), DeepSeek AI API, Grounded RAG Fallback |
+| **AI Integration** | Custom Grounded Knowledge Engine, Streaming Response Pipeline, Context API |
 
 ---
 

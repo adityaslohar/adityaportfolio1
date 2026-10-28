@@ -6,13 +6,13 @@ export async function POST() {
   if (!apiKey) {
     return NextResponse.json({
       available: false,
-      message: "No HEYGEN_API_KEY configured in .env.local. Running in interactive simulated avatar & text mode.",
+      message: "Running in interactive digital avatar mode.",
       fallback: true,
     });
   }
 
   try {
-    // Request a new session streaming token from HeyGen API
+    // Request a new session streaming token from live streaming service
     const response = await fetch("https://api.heygen.com/v1/streaming.create_token", {
       method: "POST",
       headers: {
@@ -22,10 +22,9 @@ export async function POST() {
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
       return NextResponse.json({
         available: false,
-        message: `HeyGen API responded with status ${response.status}: ${errorText}`,
+        message: "Live stream initialization unavailable. Digital avatar active.",
         fallback: true,
       });
     }

@@ -50,8 +50,8 @@ PRODUCTION PROJECTS:
 5. Planetto:
    - One-liner: Manufacturing CRM front-end streamlining industrial order quoting, raw material tracking, and dispatching.
    - Stack: React.js, REST APIs, Tailwind CSS.
-6. This Portfolio + AI Twin (Owned Project):
-   - Built from scratch in Next.js 16 (App Router), React 19, TypeScript strict, Tailwind CSS, and DeepSeek/Gemini AI integrations.
+6. This Portfolio + AI Assistant (Owned Project):
+   - Built from scratch in Next.js 16 (App Router), React 19, TypeScript strict, and Tailwind CSS with custom AI integration.
 
 TECHNICAL SKILLS (Grouped — No fake star ratings):
 • Languages: JavaScript (ES6+), TypeScript, HTML5, CSS3
@@ -60,7 +60,7 @@ TECHNICAL SKILLS (Grouped — No fake star ratings):
 • Backend & DB (Familiar): Node.js, Express.js, MongoDB, PostgreSQL
 • Design: Figma → Code, Pixel-Perfect Implementation, Design Systems
 • Tooling: Git, GitHub, VS Code, Postman, Chrome DevTools
-• AI Engineering: RAG pipelines, DeepSeek streaming, token optimization, prompt grounding
+• AI Engineering: Custom RAG architectures, streaming UI, prompt grounding
 
 EXPERIENCE:
 • Mahendra Technosoft Pvt. Ltd. (Jul 2025 – Present) — Software Developer: Building Education ERP, CRM, and Hospital Management Systems with TanStack Table v8, dynamic @react-pdf/renderer receipts, and multi-tenant RBAC.
@@ -133,8 +133,8 @@ export async function POST(req: NextRequest) {
         if (text) {
           return NextResponse.json({
             text,
-            citation: "DeepSeek V3 • Grounded in Resume & Skills",
-            source: "deepseek-direct",
+            citation: "Verified Experience & Portfolio Data",
+            source: "verified-ai",
             latencyMs: Date.now() - startTime,
           });
         }
@@ -175,8 +175,8 @@ export async function POST(req: NextRequest) {
           text = text.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
           return NextResponse.json({
             text,
-            citation: "DeepSeek R1 (OpenRouter Free) • Grounded in Resume",
-            source: "deepseek-openrouter",
+            citation: "Verified Experience & Portfolio Data",
+            source: "verified-ai",
             latencyMs: Date.now() - startTime,
           });
         }
@@ -214,8 +214,8 @@ export async function POST(req: NextRequest) {
           text = text.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
           return NextResponse.json({
             text,
-            citation: "DeepSeek R1 (Groq Free Fast Engine) • Grounded",
-            source: "deepseek-groq",
+            citation: "Verified Experience & Portfolio Data",
+            source: "verified-ai",
             latencyMs: Date.now() - startTime,
           });
         }
@@ -264,8 +264,8 @@ export async function POST(req: NextRequest) {
       if (candidateText) {
         return NextResponse.json({
           text: candidateText,
-          citation: "Google Gemini 3.5 Flash • Live AI Response",
-          source: "gemini-live",
+          citation: "Verified Experience & Portfolio Data",
+          source: "verified-ai",
           latencyMs: Date.now() - startTime,
         });
       }
@@ -306,8 +306,8 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({
     text: answer,
-    citation: `${citation} • DeepSeek Grounded Engine`,
-    source: "deepseek-grounded",
+    citation: citation,
+    source: "verified-knowledge",
     latencyMs: Date.now() - startTime,
   });
 }

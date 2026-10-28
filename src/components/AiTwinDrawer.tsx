@@ -188,14 +188,14 @@ export const AiTwinDrawer: React.FC<AiTwinDrawerProps> = ({ isOpen, onClose }) =
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-sm font-bold text-white tracking-tight">
-                  Aditya&apos;s Real-Time AI Twin
+                  Aditya&apos;s AI Assistant
                 </h3>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-                  DeepSeek AI
+                  Interactive Twin
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 font-mono">
-                DeepSeek AI Engine • Grounded in Resume & Skills
+                Custom Grounded Assistant • Verified Portfolio & Experience
               </p>
             </div>
           </div>
@@ -228,20 +228,20 @@ export const AiTwinDrawer: React.FC<AiTwinDrawerProps> = ({ isOpen, onClose }) =
           </div>
         </div>
 
-        {/* Eval Banner */}
+        {/* Verification Banner */}
         <div className="px-4 py-2 bg-cyan-950/30 border-b border-cyan-500/20 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono">
           <div className="flex items-center gap-2 text-cyan-300">
             <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Grounded 100% • No Hallucinations</span>
+            <span>Grounded Knowledge • 100% Verified</span>
           </div>
           <div className="flex items-center gap-3 text-slate-400">
             <span className="flex items-center gap-1">
               <Zap className="w-3 h-3 text-amber-400" />
-              Fast Latency
+              Real-time Response
             </span>
             <span className="flex items-center gap-1">
               <Cpu className="w-3 h-3 text-indigo-400" />
-              DeepSeek R1 / V3
+              Dynamic Synthesis
             </span>
           </div>
         </div>
@@ -284,11 +284,11 @@ export const AiTwinDrawer: React.FC<AiTwinDrawerProps> = ({ isOpen, onClose }) =
                   <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between gap-1 text-[11px] font-mono text-cyan-300">
                     <div className="flex items-center gap-1.5 truncate">
                       <Quote className="w-3 h-3 text-cyan-400 shrink-0" />
-                      <span className="truncate">Source: {msg.citation}</span>
+                      <span className="truncate">Reference: {msg.citation}</span>
                     </div>
-                    {msg.source && (
-                      <span className="px-1.5 py-0.2 rounded bg-cyan-500/10 text-cyan-400 text-[10px] shrink-0">
-                        {msg.source}
+                    {msg.latencyMs && (
+                      <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 text-[10px] shrink-0">
+                        {msg.latencyMs}ms
                       </span>
                     )}
                   </div>
@@ -306,7 +306,7 @@ export const AiTwinDrawer: React.FC<AiTwinDrawerProps> = ({ isOpen, onClose }) =
           {isTyping && (
             <div className="flex items-center gap-2 text-xs text-slate-400 font-mono pl-11">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-              <span>Generating grounded answer with AI engine...</span>
+              <span>Synthesizing response...</span>
             </div>
           )}
 

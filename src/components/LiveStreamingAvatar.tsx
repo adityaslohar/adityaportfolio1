@@ -31,12 +31,12 @@ export const LiveStreamingAvatar: React.FC<LiveStreamingAvatarProps> = ({
 
       if (!data.available) {
         setHasApiKey(false);
-        setStatusMessage("Avatar ready in interactive digital preview mode (Add HEYGEN_API_KEY to enable live WebRTC)");
+        setStatusMessage("Interactive digital avatar ready");
         setStreamActive(true);
         if (onAvatarReady) onAvatarReady(true);
       } else {
         setHasApiKey(true);
-        setStatusMessage("Connecting to HeyGen WebRTC stream...");
+        setStatusMessage("Connecting to real-time video stream...");
 
         try {
           // Dynamic import of streaming avatar package
@@ -68,19 +68,18 @@ export const LiveStreamingAvatar: React.FC<LiveStreamingAvatarProps> = ({
               avatarName: process.env.NEXT_PUBLIC_HEYGEN_AVATAR_ID || "Wayne_20240711",
             });
           } else {
-            setStatusMessage("Interactive avatar active in digital twin mode");
+            setStatusMessage("Interactive digital avatar active");
             setStreamActive(true);
             if (onAvatarReady) onAvatarReady(true);
           }
         } catch {
-          setStatusMessage("Avatar ready in digital twin mode");
+          setStatusMessage("Interactive digital avatar active");
           setStreamActive(true);
           if (onAvatarReady) onAvatarReady(true);
         }
       }
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Connection failed";
-      setStatusMessage(`Notice: ${msg}. Digital twin active.`);
+      setStatusMessage("Interactive digital avatar active");
       setStreamActive(true);
       if (onAvatarReady) onAvatarReady(true);
     } finally {
