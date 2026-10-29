@@ -37,7 +37,7 @@ export const AiTwinDrawer: React.FC<AiTwinDrawerProps> = ({ isOpen, onClose }) =
     {
       id: "initial",
       sender: "twin",
-      text: "Hello! I am Aditya's AI Assistant. I can answer questions regarding his professional experience, technical stack, and production projects. Feel free to ask a question or select a topic below.",
+      text: "Hello! I am Aditya's AI Recruiter Twin. I'm here to help engineering hiring managers and recruiters evaluate Aditya for full-time Front-End Developer (React / Next.js) roles. Feel free to ask about his immediate availability, 5 production platforms, or his team leadership of 7 developers.",
       citation: "Portfolio Brief — Verified Knowledge Base",
       source: "grounded-brief",
     },
@@ -50,12 +50,12 @@ export const AiTwinDrawer: React.FC<AiTwinDrawerProps> = ({ isOpen, onClose }) =
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const suggestedPrompts = [
-    "What are Aditya's core engineering strengths?",
+    "What is Aditya's notice period and joining availability?",
+    "Why should we hire Aditya for a Front-End role?",
     "Tell me about the Education ERP & TanStack Table v8",
     "How did he lead a team of 7 developers?",
     "What was the scale and architecture of SalesOptim?",
-    "What is Aditya's tech stack and experience level?",
-    "What are his preferred roles and location availability?",
+    "What is his tech stack and production experience?",
   ];
 
   useEffect(() => {

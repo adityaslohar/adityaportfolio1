@@ -7,9 +7,10 @@ import { PORTFOLIO_DATA } from "@/data/portfolio";
 
 interface ContactFooterProps {
   onOpenAiTwin: () => void;
+  onOpenResume?: () => void;
 }
 
-export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenAiTwin }) => {
+export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenAiTwin, onOpenResume }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -28,15 +29,15 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenAiTwin }) =>
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-wider mb-4">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Open to Opportunities
+              Actively Interviewing • Immediate Joiner
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              Let&apos;s Connect and Collaborate.
+              Interview Me for Your Engineering Team.
             </h2>
 
             <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
-              I am actively open to <span className="text-white font-semibold">Front-End Developer</span> and <span className="text-white font-semibold">React / Next.js Developer</span> roles. Experienced in delivering scalable web applications, collaborating across product workflows, and maintaining high engineering standards.
+              Exclusively seeking <span className="text-white font-semibold">Full-Time</span> roles as a <span className="text-white font-semibold">Front-End Developer</span>, <span className="text-white font-semibold">React Developer</span>, or <span className="text-white font-semibold">Next.js Engineer</span>. 0-day notice period, ready to start immediately, and open to Remote, Hybrid, or On-site opportunities (Pune, Mumbai, Bangalore, or relocation).
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -57,6 +58,16 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenAiTwin }) =>
                 <Phone className="w-4 h-4 text-emerald-400" />
                 <span>WhatsApp (+91 77449 98493)</span>
               </a>
+
+              {onOpenResume && (
+                <button
+                  onClick={onOpenResume}
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 transition-all hover:border-cyan-500/40"
+                >
+                  <Download className="w-4 h-4 text-cyan-400" />
+                  <span>View Resume</span>
+                </button>
+              )}
 
               <button
                 onClick={handleCopyEmail}

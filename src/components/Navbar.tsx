@@ -7,9 +7,10 @@ import { PORTFOLIO_DATA } from "@/data/portfolio";
 
 interface NavbarProps {
   onOpenAiTwin: () => void;
+  onOpenResume?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenAiTwin }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenAiTwin, onOpenResume }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -92,13 +93,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAiTwin }) => {
             </button>
 
             {/* Resume button */}
-            <a
-              href="#contact"
+            <button
+              onClick={onOpenResume}
               className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:border-white/20"
             >
-              <FileText className="w-3.5 h-3.5 text-slate-400" />
-              <span>Resume</span>
-            </a>
+              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <span>View Resume</span>
+            </button>
 
             {/* Social links */}
             <a

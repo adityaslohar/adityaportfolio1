@@ -9,14 +9,14 @@ export const ProjectsSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
-  const categories = ["All", "Featured", "Client Platforms", "Multi-Tenant & RBAC", "AI & Owned"];
+  const categories = ["All", "Featured", "Production SaaS & Apps", "Multi-Tenant & RBAC", "AI & Next.js"];
 
   const filteredProjects = PORTFOLIO_DATA.projects.filter((project) => {
     if (selectedCategory === "All") return true;
     if (selectedCategory === "Featured") return project.featured;
-    if (selectedCategory === "Client Platforms") return project.id === "spicy-mango" || project.id === "planetto";
+    if (selectedCategory === "Production SaaS & Apps") return project.id === "spicy-mango" || project.id === "planetto" || project.id === "salesoptim";
     if (selectedCategory === "Multi-Tenant & RBAC") return project.id === "salesoptim" || project.id === "xpertbiz-solution" || project.id === "education-erp";
-    if (selectedCategory === "AI & Owned") return project.id === "ai-twin-portfolio";
+    if (selectedCategory === "AI & Next.js") return project.id === "ai-twin-portfolio";
     return true;
   });
 

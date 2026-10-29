@@ -42,14 +42,24 @@ export interface EducationItem {
   notes?: string;
 }
 
+export interface CertificationItem {
+  title: string;
+  issuer: string;
+  year: string;
+  credentialUrl?: string;
+}
+
 export const PORTFOLIO_DATA = {
   me: {
     name: "Aditya Lohar",
     title: "Front-End Developer — React / Next.js / TypeScript",
     headline: "Front-end engineer building mission-critical business software with pixel-perfect craft and high-scale architectures.",
     bio: "Front-End Developer with ~2.5 years of professional experience building scalable production web applications, multi-tenant enterprise systems, and high-conversion booking platforms. Proven track record of leading a team of 7 developers, converting complex Figma designs into responsive UIs, and architecting resilient component systems.",
-    location: "Sangli / Pune, Maharashtra, India",
+    location: "Akurdi, Pune, Maharashtra, 411038",
     openToRemote: true,
+    noticePeriod: "Immediate Joiner (Available to start immediately)",
+    employmentType: "Full-Time (Permanent)",
+    workPreferences: "Remote / Hybrid / On-site (Pune, Mumbai, Bangalore, open to relocation)",
     email: "adityalohar5838@gmail.com",
     phone: "+91 77449 98493",
     whatsapp: "https://wa.me/917744998493",
@@ -60,6 +70,7 @@ export const PORTFOLIO_DATA = {
     experienceLevel: "~2.5 Years Professional (Dec 2023 – Present)",
     rolesSeeking: "Front-End Developer / React Developer / Next.js Engineer",
     targetCompanies: "Product companies & SaaS startups (20–500 people, India + Remote)",
+    interviewFocus: "Production Software Architecture, TypeScript Strictness, TanStack Table v8, Multi-Tenant RBAC, Team Leadership",
   },
 
   keySellingPoints: [
@@ -121,7 +132,7 @@ export const PORTFOLIO_DATA = {
       ],
       hardestPart:
         "Architecting the dynamic rate-plan calculation engine on the front-end that calculates pricing combinations across seasons × occupancy rates × applied coupons without lagging the interface or introducing state desynchronization.",
-      outcome: "Live client hospitality booking platform with an autonomous self-serve CMS for property owners.",
+      outcome: "Live commercial hospitality booking platform with an autonomous self-serve CMS for property managers.",
       competencyShown: "Complex Admin UX + Dynamic Content Management + Multi-Tier Pricing Logic",
       liveUrl: "https://spicymango.in",
       repoUrl: undefined,
@@ -444,10 +455,18 @@ export const PORTFOLIO_DATA = {
     {
       degree: "Secondary School Certificate (SSC)",
       institution: "City High School, Sangli",
-      period: "Completed",
+      period: "2017",
       notes: "Distinction in Science & Mathematics.",
     },
   ] as EducationItem[],
+
+  certifications: [
+    {
+      title: "Front End Development",
+      issuer: "Simplilearn",
+      year: "2024",
+    },
+  ] as CertificationItem[],
 
   // Pre-computed Grounded AI Twin Knowledge Base for RAG queries
   aiTwinKnowledge: [
@@ -457,7 +476,31 @@ export const PORTFOLIO_DATA = {
       keywords: ["who is aditya", "about", "bio", "overview", "intro", "experience level"],
       citation: "Portfolio Brief — Executive Summary",
       answer:
-        "Aditya Lohar is a Front-End Developer with ~2.5 years of professional experience (Dec 2023 – Present) specializing in React.js, Next.js (App Router), TypeScript, and Tailwind CSS. He specializes in building real business software—having shipped 4 production applications including high-traffic booking platforms, multi-tenant enterprise CRM/HRMs, and systems used daily by 10+ companies and 200+ employees. He has also led a front-end team of 7 developers.",
+        "Aditya Lohar is a Front-End Developer with ~2.5 years of professional experience (Dec 2023 – Present) specializing in React.js, Next.js (App Router), TypeScript, and Tailwind CSS. He specializes in building real business software—having contributed to and shipped 5 production platforms including an institutional Education ERP, high-traffic booking platforms, multi-tenant enterprise CRM/HRMs, and systems used daily by 10+ companies and 200+ employees. He has also led a front-end team of 7 developers.",
+    },
+    {
+      id: "availability",
+      topic: "Notice Period & Availability",
+      keywords: ["notice period", "availability", "when can you start", "joining time", "immediate", "join immediately"],
+      citation: "Candidate Status — Immediate Availability",
+      answer:
+        "Aditya is an **Immediate Joiner** (0 days notice period) and is available to start right away upon receiving an offer. He is actively scheduling interviews for full-time engineering positions.",
+    },
+    {
+      id: "target-role",
+      topic: "Target Roles & Employment Preference",
+      keywords: ["target role", "roles seeking", "full time", "freelance", "contract", "permanent", "job search"],
+      citation: "Candidate Preferences — Full-Time Roles",
+      answer:
+        "Aditya is exclusively interviewing for **Full-Time Permanent Roles** as a **Front-End Developer**, **React.js Developer**, or **Next.js Engineer** with product companies and high-growth SaaS startups. He is not seeking freelance or gig work.",
+    },
+    {
+      id: "relocation",
+      topic: "Work Mode, Location & Relocation",
+      keywords: ["relocation", "relocate", "location", "pune", "bangalore", "mumbai", "remote", "hybrid", "onsite", "on-site"],
+      citation: "Candidate Preferences — Location & Flexibility",
+      answer:
+        "Aditya is based in Sangli / Pune, Maharashtra, India. He is fully set up and experienced in **Remote** work, open to **Hybrid** or **On-site** roles in Pune, Mumbai, Bangalore, and **open to relocation** for strong product engineering opportunities.",
     },
     {
       id: "selling-points",
@@ -514,6 +557,14 @@ export const PORTFOLIO_DATA = {
       citation: "Skills Matrix — Verified",
       answer:
         "Aditya's primary stack:\n• **Languages**: JavaScript (ES6+), TypeScript, HTML5, CSS3\n• **Frontend**: React.js, Next.js (App Router), Tailwind CSS, Bootstrap, Responsive Component Architecture\n• **State & Data**: REST API integration, Context API\n• **Familiar Backend/DB**: Node.js, Express, MongoDB, PostgreSQL\n• **Tools**: Git, GitHub, VS Code, Postman, Chrome DevTools\n• **AI Exploration**: RAG pipelines, streaming UI (demonstrated in this portfolio)",
+    },
+    {
+      id: "certifications",
+      topic: "Certifications",
+      keywords: ["certification", "certifications", "simplilearn", "certificate", "course"],
+      citation: "Verified Credentials — Simplilearn",
+      answer:
+        "Aditya holds a verified professional certification in **Front End Development** from **Simplilearn (2024)**, reinforcing his hands-on expertise in React.js, modern JavaScript, and web architecture.",
     },
     {
       id: "contact",

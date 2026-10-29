@@ -10,7 +10,10 @@ VERIFIED RESUME & BACKGROUND:
 • Name: Aditya Lohar
 • Title: Front-End Developer — React / Next.js / TypeScript
 • Professional Experience: ~2.5 years (Dec 2023 – Present)
-• Location: Sangli / Pune, Maharashtra, India (Actively open to remote & on-site roles)
+• Target Job: Full-Time / Permanent Front-End Developer, React Developer, Next.js Engineer (Exclusively seeking full-time product/SaaS roles; NOT seeking freelance/client gigs).
+• Notice Period & Availability: Immediate Joiner (Available to start immediately upon offer).
+• Work Preference: Open to Remote worldwide, Hybrid, or On-site in Pune, Mumbai, Bangalore, and open to relocation for compelling full-time roles.
+• Location: Sangli / Pune, Maharashtra, India
 • Email: adityalohar5838@gmail.com
 • Phone: +91 77449 98493 (WhatsApp / Call)
 • GitHub: https://github.com/adityaslohar
@@ -91,15 +94,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Question is required" }, { status: 400 });
   }
 
-  // Guardrail check: Disallow personal life, salary, visa, notice period queries
+  // Guardrail check: Disallow personal life, relationship, politics, religion queries
   const lowerQ = question.toLowerCase();
-  const isBlocked = ["salary", "compensation", "visa", "notice period", "relationship", "politics", "religion"].some(
+  const isBlocked = ["compensation", "visa", "relationship", "politics", "religion"].some(
     (kw) => lowerQ.includes(kw)
   );
 
   if (isBlocked) {
     return NextResponse.json({
-      text: "I am programmed to only discuss Aditya's professional qualifications, shipped software, engineering leadership, and tech stack. For inquiries regarding compensation, availability, or formal offer details, please contact Aditya directly at adityalohar5838@gmail.com or via WhatsApp at +91 77449 98493.",
+      text: "I am programmed to focus on Aditya's professional qualifications, production software delivery, technical stack, and engineering leadership. For formal discussions regarding compensation, offer details, or sponsorship, please contact Aditya directly at adityalohar5838@gmail.com or via WhatsApp at +91 77449 98493.",
       citation: "Guardrail — Professional Boundary Policy",
       source: "guardrail",
       latencyMs: Date.now() - startTime,
@@ -283,6 +286,14 @@ export async function POST(req: NextRequest) {
   if (!matched) {
     if (q.includes("lead") || q.includes("team") || q.includes("7") || q.includes("manage")) {
       matched = kb.find((k) => k.id === "leadership");
+    } else if (q.includes("notice") || q.includes("join") || q.includes("available") || q.includes("start") || q.includes("when can")) {
+      matched = kb.find((k) => k.id === "availability");
+    } else if (q.includes("relocat") || q.includes("onsite") || q.includes("on-site") || q.includes("hybrid") || q.includes("bangalore") || q.includes("mumbai") || q.includes("pune")) {
+      matched = kb.find((k) => k.id === "relocation");
+    } else if (q.includes("full time") || q.includes("full-time") || q.includes("freelance") || q.includes("contract") || q.includes("role") || q.includes("hire")) {
+      matched = kb.find((k) => k.id === "target-role");
+    } else if (q.includes("education") || q.includes("erp") || q.includes("tanstack") || q.includes("mahendra") || q.includes("pdf")) {
+      matched = kb.find((k) => k.id === "education-erp");
     } else if (q.includes("sales") || q.includes("crm") || q.includes("200") || q.includes("rbac")) {
       matched = kb.find((k) => k.id === "salesoptim");
     } else if (q.includes("spicy") || q.includes("hotel") || q.includes("booking") || q.includes("price")) {

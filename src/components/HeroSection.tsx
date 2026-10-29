@@ -23,9 +23,10 @@ import { AnimatedHeroBackground } from "./AnimatedHeroBackground";
 
 interface HeroSectionProps {
   onOpenAiTwin: () => void;
+  onOpenResume?: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAiTwin }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAiTwin, onOpenResume }) => {
   return (
     <section className="relative min-h-[92vh] flex items-center pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#05070d]">
       {/* Advanced Animated Canvas Background */}
@@ -44,12 +45,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAiTwin }) => {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               <span className="font-semibold text-emerald-400 tracking-wide uppercase text-[11px] font-mono">
-                Available for Immediate Hire
+                Immediate Joiner • Full-Time Roles
               </span>
               <span className="text-slate-600">•</span>
               <span className="text-slate-300 flex items-center gap-1 text-[11px]">
                 <MapPin className="w-3 h-3 text-cyan-400" />
-                Sangli / Pune • Remote OK
+                Sangli / Pune • Remote & Relocation OK
               </span>
             </div>
 
@@ -96,15 +97,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAiTwin }) => {
                 </span>
               </button>
 
-              <a
-                href={PORTFOLIO_DATA.me.resumePdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 hover:border-white/20 transition-all"
-              >
-                <Download className="w-4 h-4 text-slate-400" />
-                <span>Resume (PDF)</span>
-              </a>
+              {onOpenResume ? (
+                <button
+                  onClick={onOpenResume}
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 hover:border-white/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <Download className="w-4 h-4 text-cyan-400" />
+                  <span>View Resume</span>
+                </button>
+              ) : (
+                <a
+                  href={PORTFOLIO_DATA.me.resumePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 hover:border-white/20 transition-all"
+                >
+                  <Download className="w-4 h-4 text-slate-400" />
+                  <span>Resume (PDF)</span>
+                </a>
+              )}
             </div>
 
             {/* Recruiter Quick Contact & Profiles Strip */}
